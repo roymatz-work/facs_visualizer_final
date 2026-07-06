@@ -70,8 +70,6 @@ cross-sample comparison and re-adjustment (your requirement #8) work.
   in `config.py` with the right `parent`. They appear in the tree automatically.
 - **Compensation:** `flowkit` supports spillover matrices; add a step in
   `FlowSample.__init__` to apply `apply_compensation` before gating.
-- **Better transforms:** swap `AsinhAxis` for `flowkit`'s Logicle/WSPBiex in
-  `default_transform_for` if you want to match FlowJo's biexponential exactly.
 - **Editing a saved gate in the Compare view:** the grid is currently read-only;
   making its polygon draggable and writing back to the shared gate is the natural
   next step for live cross-sample threshold tuning.
