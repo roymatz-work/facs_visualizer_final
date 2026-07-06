@@ -6,11 +6,6 @@ by hand on density plots, applies each gate hierarchically, and
 applies **one shared gate definition across all your samples (mice)** so you can
 compare and re-adjust thresholds across the whole cohort at once.
 
-The core
-engine and the full gating hierarchy you specified are implemented and tested;
-the GUI implements the complete draw → apply → compare loop. See
-*Extending* below for the pieces meant to grow.
-
 ## What it does today
 
 - **FCS → DataFrame** via `flowkit`, keeping both detector names (`BV421-A`) and
