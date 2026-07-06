@@ -68,10 +68,3 @@ cross-sample comparison and re-adjustment (your requirement #8) work.
 - **FlowJo interop:** `flowkit` can import/export GatingML and read FlowJo `.wsp`
   workspaces if you later want to exchange gates with FlowJo.
 
-## Notes / limitations
-
-- Density plots use a 2D histogram (fast for 10^4–10^6 events). Percentile-based
-  axis limits keep outliers from squashing the view.
-- Marker resolution is tolerant (`"Zombie"` matches `"Zombie NIR"`), but if a
-  panel lacks a referenced marker, that gate is skipped with a console note.
-- The app assumes samples share a common channel/panel layout.
