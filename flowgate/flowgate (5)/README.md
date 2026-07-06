@@ -14,7 +14,7 @@ compare and re-adjust thresholds across the whole cohort at once.
   Beads → Real_Cells → Real_Fwd_Cells → Real_Fwd_Side_Cells → Live_Cells →
   Category_Cells, plus a place to add subpopulation gates.
 - **Manual polygon gating** — draw arbitrary polygons directly on the plot
-  (matplotlib `PolygonSelector`), just like FlowJo. Any shape, any number of
+  (matplotlib `PolygonSelector`). Any shape, any number of
   vertices.
 - **Per-axis transforms** — linear for scatter, arcsinh (biexp-like) for
   fluorescence; gate math happens in the same display space you draw in.
