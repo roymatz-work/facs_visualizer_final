@@ -47,8 +47,6 @@ flowgate/
               #   GatingTree (shared), Session (samples + apply-to-all + stats)
   config.py   # the gate hierarchy as data; marker->detector resolution
   gui.py      # PyQt5 app: density canvas + PolygonSelector, tree, stats, compare
-make_synthetic_data.py  # generates test mice
-test_core.py            # headless test of the whole engine
 run.py                  # entry point
 ```
 
