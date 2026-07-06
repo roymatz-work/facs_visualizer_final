@@ -10,7 +10,7 @@ compare and re-adjust thresholds across the whole cohort at once.
 
 - **FCS → DataFrame** via `flowkit`, keeping both detector names (`BV421-A`) and
   marker/stain names (`CD45`), so gates can be specified by marker.
-- **The exact gating hierarchy** you described (data-driven in `config.py`):
+- **The gating hierarchy**:
   Beads → Real_Cells → Real_Fwd_Cells → Real_Fwd_Side_Cells → Live_Cells →
   Category_Cells, plus a place to add subpopulation gates.
 - **Manual polygon gating** — draw arbitrary polygons directly on the plot
