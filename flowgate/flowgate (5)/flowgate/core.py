@@ -30,7 +30,7 @@ import flowkit as fk
 
 
 # --------------------------------------------------------------------------- #
-# Axis transforms (forward only is needed for both plotting and gating)
+# Axis transforms 
 # --------------------------------------------------------------------------- #
 class AxisTransform:
     """Monotonic forward transform from raw channel value -> display value."""
@@ -49,7 +49,7 @@ class LinearAxis(AxisTransform):
 
 
 class AsinhAxis(AxisTransform):
-    """arcsinh transform , invertible cousin of a log/biex axis.
+    """arcsinh transform .
 
     ``cofactor`` sets where the axis switches from ~linear (near 0, including
     negatives from compensation) to ~log. 150 is a sane default for fluorescence
