@@ -58,7 +58,7 @@ cross-sample comparison and re-adjustment (your requirement #8) work.
 
 ## Extending
 
-- **Subpopulation gates (step 7):** add `GateSpec(...)` rows to `GATE_HIERARCHY`
+- **Subpopulation gates:** add `GateSpec(...)` rows to `GATE_HIERARCHY`
   in `config.py` with the right `parent`. They appear in the tree automatically.
 - **Compensation:** `flowkit` supports spillover matrices; add a step in
   `FlowSample.__init__` to apply `apply_compensation` before gating.
