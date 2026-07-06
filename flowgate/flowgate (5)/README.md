@@ -16,7 +16,7 @@ compare and re-adjust thresholds across the whole cohort at once.
 - **Manual polygon gating** — draw arbitrary polygons directly on the plot
   (matplotlib `PolygonSelector`). Any shape, any number of
   vertices.
-- **Per-axis transforms** — linear for scatter, arcsinh (biexp-like) for
+- **Per-axis transforms** — linear for scatter,(biexp-like) for
   fluorescence; gate math happens in the same display space you draw in.
 - **One gate, all samples** — the shared `GatingTree` is applied to every loaded
   sample. Edit a gate once and re-gate the whole cohort.
