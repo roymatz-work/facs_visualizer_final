@@ -34,7 +34,6 @@ from matplotlib.colors import LinearSegmentedColormap
 import matplotlib as mpl
 
 # Density colormap: jet, but truncated so the densest points are BRIGHT red
-# (#FF0000) instead of jet's dark maroon top (#7F0000).
 FLOW_CMAP = LinearSegmentedColormap.from_list(
     "flowjet", mpl.colormaps["jet"](np.linspace(0.0, 0.9, 256)))
 
