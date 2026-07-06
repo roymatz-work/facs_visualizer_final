@@ -1,4 +1,4 @@
-"""FlowGate — a small FlowJo-style interactive gating tool for FCS data."""
+"""FlowGate a FlowJo-style interactive gating tool for FCS data."""
 from .core import (
     Session, FlowSample, PolygonGate, GatingTree,
     LinearAxis, AsinhAxis, default_transform_for,
