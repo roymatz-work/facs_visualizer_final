@@ -1,12 +1,12 @@
 # FlowGate
 
-A small, FlowJo-style interactive gating tool for flow cytometry (FCS) data,
+An interactive gating tool for flow cytometry (FCS) data,
 built in Python. It reads FCS files into DataFrames, lets you draw polygon gates
-by hand on density plots, applies each gate hierarchically, and — importantly —
+by hand on density plots, applies each gate hierarchically, and
 applies **one shared gate definition across all your samples (mice)** so you can
 compare and re-adjust thresholds across the whole cohort at once.
 
-This is a working **foundation**, not a finished FlowJo replacement. The core
+The core
 engine and the full gating hierarchy you specified are implemented and tested;
 the GUI implements the complete draw → apply → compare loop. See
 *Extending* below for the pieces meant to grow.
