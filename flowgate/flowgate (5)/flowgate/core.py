@@ -492,6 +492,47 @@ class Session:
         mask = self.masks_for(sample_id)[gate_name]
         return s.data.loc[mask].reset_index(drop=True)
 
+    # ---- sex-split subpopulation counts (for bar graphs) ----
+    def sex_of_sample(self, sample_id: str) -> Optional[str]:
+        """Classify a mouse as 'm' or 'f' by the character right before '.fcs'
+        in its filename (case-insensitive). Anything else returns None."""
+        import os
+        s = self.samples.get(sample_id)
+        if s is None:
+            return None
+        name = os.path.basename(s.path).lower()
+        stem = name[:-4] if name.endswith(".fcs") else name
+        if stem.endswith("m"):
+            return "m"
+        if stem.endswith("f"):
+            return "f"
+        return None
+
+    def category_subpopulations(self) -> list[str]:
+        """Names of the 'cell type' gates below Category_Cells. Falls back to
+        ['Category_Cells'] itself if no subpopulations have been added yet."""
+        if "Category_Cells" not in self.tree.gates:
+            return []
+        subs = self.tree.descendants("Category_Cells")
+        return subs if subs else ["Category_Cells"]
+
+    def category_counts_by_sex(self) -> dict[str, dict[str, int]]:
+        """For each Category subpopulation, event counts summed over the
+        male/female-labelled mice only:
+        ``{gate_name: {'m': n, 'f': n, 'all': n}}`` where 'all' = m + f."""
+        gates = self.category_subpopulations()
+        out = {g: {"m": 0, "f": 0, "all": 0} for g in gates}
+        for sid in self.samples:
+            sex = self.sex_of_sample(sid)
+            if sex not in ("m", "f"):
+                continue
+            masks = self.masks_for(sid)
+            for g in gates:
+                n = int(masks[g].sum())
+                out[g][sex] += n
+                out[g]["all"] += n
+        return out
+
     def stats(self) -> list[GateStat]:
         """One row per (sample, gate): counts and % of parent."""
         rows: list[GateStat] = []
