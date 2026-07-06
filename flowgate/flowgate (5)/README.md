@@ -30,7 +30,6 @@ compare and re-adjust thresholds across the whole cohort at once.
 
 ```bash
 pip install -r requirements.txt        # flowkit, flowio, matplotlib, PyQt5, ...
-python make_synthetic_data.py          # optional: writes ./data/Mouse1..4.fcs to try it
 python run.py                          # launch the GUI
 ```
 
