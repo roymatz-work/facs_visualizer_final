@@ -54,7 +54,7 @@ def resolve_channel(token: str, marker_map: dict[str, str], channels: list[str])
         if mk and (tl == mk.lower() or tl in mk.lower() or mk.lower() in tl):
             if det in channels:
                 return det
-    # if no marker is found in fcs: case-insensitive detector match
+    # if no marker is found: case-insensitive detector match
     for c in channels:
         if c.lower() == tl:
             return c
